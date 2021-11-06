@@ -14,6 +14,20 @@ function index(req, res) {
   })
 }
 
+function create(req,res) {
+  req.body.owner = req.user.profile_id
+  req.body.aggressive = !!req.body.aggressive
+  Breed.create(req.body)
+  .then(breed => {
+    res.redirect('/breeds')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/breeds')
+  })
+}
+
 export {
-  index
+  index,
+  create
 }
