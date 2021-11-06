@@ -27,7 +27,23 @@ function create(req,res) {
   })
 }
 
+function show(req, res){
+  Breed.findById(req.params.id)
+  .populate("owner")
+  .then(breed => {
+    res.render('breeds/show', {
+      breed,
+      title: "hammy show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/breeds')
+  })
+}
+
 export {
   index,
-  create
+  create,
+  show
 }

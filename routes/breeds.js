@@ -6,6 +6,8 @@ const router = Router()
 
 router.get('/', breedsCtrl.index )
 
+router.get('/:id', breedsCtrl.show)
+
 router.post('/', isLoggedIn, breedsCtrl.create)
 
 

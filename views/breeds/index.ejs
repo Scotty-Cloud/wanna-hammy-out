@@ -16,9 +16,15 @@
     </label>
     <button type="submit">Add Hammy</button>
     </form>
+    <% } %>
+    <h2>All Hammys!</h2>
     <ul>
-      breeds.forEach(breed => { %> 
-      <li>hamp <%= breed.name %> is <%= breed.aggressive ? 'not aggressive' : 'very aggressive' %></li> 
+     <% breeds.forEach(breed => { %> 
+      <li>
+        hampy
+        <a href="/breeds/<%= breed._id %>"><%= breed.name %></a>
+        is <%= breed.aggressive ? 'not aggressive' : 'very aggressive' %>
+        </li>
       <% }) %>
     </ul>
 </section>
