@@ -5,6 +5,8 @@ const router = Router()
 
 router.get('/', breedsCtrl.index )
 
+router.post('/', tacosCtrl.create)
+
 export {
   router
 }
