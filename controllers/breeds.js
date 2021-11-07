@@ -90,6 +90,25 @@ function update(req, res) {
   })
 }
 
+function deleteBreed(req, res) {
+  Taco.findById(req.params.id)
+  .then(breed => {
+    if(breed.owner.equals(req.user.profile._id)){
+      breed.delete()
+      .then(() => {
+        res.redirect('/breeds')
+      })
+    } else {
+      throw new ERROR ('CANT BURY SOMEONE ELSES HAMMY')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/breeds')
+  })
+  }
+
+
 
 export {
   index,
@@ -97,5 +116,6 @@ export {
   show,
   switchAggressive,
   edit,
-  update
+  update,
+  deleteBreed as delete
 }

@@ -4,12 +4,10 @@
 </head>
 <body>
   <nav>
-    <a href="/breed">hammy</a>
-    <a href="/profiles">hammy nation</a>
+    <a href="/breeds"><button type="submit">hammy</button></a>
+    <a href="/profiles"><button type="submit">hammy nation</button></a>
     <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
+      <a href="/auth/logout"><button type="submit">Logout</button></a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
