@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Update This Hammy!</h1>
+  <form action="/breeds/<%= breed._id %>?_method=PUT" method="POST">
+  <label>
+    Name:
+    <input
+    type="text"
+    name="name"
+    value="<% breed.name %>"
+    autocomplete="off"
+    >
+  </label>
+  <label>
+    SubSpecies?
+    <input
+    type="checkbox"
+    name="SubSpecies"
+    <%= breed.SubSpecies ? "checked" : "" %>
+    >
+  </label>
+  <button type="submit">Update This Hammy</button>
+  </form>
+</section>
+
+
+<%- include('../partials/footer') %>
