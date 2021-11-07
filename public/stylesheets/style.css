@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background-color: rgb(155, 122, 93);
+  background-image: url("https://i.pinimg.com/originals/ec/eb/79/eceb7990b39fa62d4189f57f2076712f.png");
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
