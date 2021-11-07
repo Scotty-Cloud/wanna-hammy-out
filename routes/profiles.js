@@ -10,7 +10,9 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-router.post('/:id/cats', isLoggedIn, profilesCtrl.adoptCat)
+router.post('/:id/cats', isLoggedIn, profilesCtrl.adoptHamster)
+
+router.delete('hamsters/:id', isLoggedIn, profilesCtrl.deleteHamster)
 
 export {
   router

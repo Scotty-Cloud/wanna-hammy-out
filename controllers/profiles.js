@@ -34,7 +34,7 @@ function show(req, res){
   })
 }
 
-function adoptCat(req, res){
+function adoptHamster(req, res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.hamsters.push(req.body)
@@ -49,10 +49,25 @@ function adoptCat(req, res){
   })
 }
 
+function deleteHamster(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.hamsters.remove({_id: req.params._id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
 
 
 export {
   index,
   show,
-  adoptCat,
+  adoptHamster,
+  deleteHamster,
 }
