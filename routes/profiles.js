@@ -10,6 +10,7 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
+router.post('/:id/cats', isLoggedIn, profilesCtrl.adoptCat)
 
 export {
   router
