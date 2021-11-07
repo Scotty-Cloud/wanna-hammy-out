@@ -15,6 +15,8 @@ router.patch("/:id/flip-aggressive", isLoggedIn, breedsCtrl.switchAggressive)
 
 router.get('/:id/edit', isLoggedIn, breedsCtrl.edit)
 
+router.put('/:id', isLoggedIn, breedsCtrl.update)
+
 export {
   router
 }

@@ -71,7 +71,24 @@ function edit(req, res) {
   })
 }
 
-
+function update(req, res) {
+  Breed.findById(req.params.id)
+  .then(breed => {
+    if(breed.owner,equals(eq.user.profile_id)) {
+      req.body.aggressive = !!req.body.agressive
+      breed.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/breeds/${breed._id}`)
+      })
+    } else {
+      throw new Error ("Do You Know Anything About Hammy?")
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/breeds`)
+  })
+}
 
 
 export {
@@ -79,5 +96,6 @@ export {
   create,
   show,
   switchAggressive,
-  edit
+  edit,
+  update
 }
