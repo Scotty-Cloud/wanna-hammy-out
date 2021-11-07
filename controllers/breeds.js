@@ -56,9 +56,28 @@ function switchAggressive(req, res) {
     res.redirect('/breeds')
   })
 }
+
+function edit(req, res) {
+  Breed.findById(req.params.id)
+  .then(breed => {
+    res.render('breeds/edit', {
+      breed,
+      title: "edit"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/breeds')
+  })
+}
+
+
+
+
 export {
   index,
   create,
   show,
-  switchAggressive
+  switchAggressive,
+  edit
 }

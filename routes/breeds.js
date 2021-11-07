@@ -13,6 +13,8 @@ router.post('/', isLoggedIn, breedsCtrl.create)
 
 router.patch("/:id/flip-aggressive", isLoggedIn, breedsCtrl.switchAggressive)
 
+router.get('/:id/edit', isLoggedIn, breedsCtrl.edit)
+
 export {
   router
 }
