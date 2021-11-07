@@ -8,8 +8,10 @@ router.get('/', breedsCtrl.index )
 
 router.get('/:id', breedsCtrl.show)
 
+
 router.post('/', isLoggedIn, breedsCtrl.create)
 
+router.patch("/:id/flip-aggressive", isLoggedIn, breedsCtrl.switchAggressive)
 
 export {
   router

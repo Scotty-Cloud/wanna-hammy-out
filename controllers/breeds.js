@@ -4,8 +4,8 @@ function index(req, res) {
   Breed.find({})
   .then(breeds => {
     res.render('breeds/index', {
+      title:"Hampsters!",
       breeds,
-      title:"Hampsters!"
     })
   })
   .catch(err => {
@@ -42,8 +42,23 @@ function show(req, res){
   })
 }
 
+function switchAggressive(req, res) {
+  Breed.findById(req.params.id)
+  .then(breed => {
+    breed.aggressive = !breed.aggressive
+    breed.save()
+    .then(()=> {
+      res.redirect(`/breeds/${breed._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/breeds')
+  })
+}
 export {
   index,
   create,
-  show
+  show,
+  switchAggressive
 }

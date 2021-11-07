@@ -2,9 +2,19 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <p>Take a look at this hamster</p>
+  <p>Look At This Hamster</p>
   <h1><%= breed.name %>hampy</h1>
   <h2>This hamster is <%= breed.aggressive ? 'not aggressive 😄' : 'very aggressive 😔' %></h2>
+  <% if (user) { %>
+    <form
+    action="/breeds/<%= breed._id %>/flip-aggressive?_method=PATCH"
+    method="POST"
+    >
+    <button class="btn" type="submit">
+      This Hammy is <%= breed.aggressive ? 'not aggressive 🥳' : 'very aggressive 😖' %> 
+      </button>
+      </form>
+      <% } %>
 </section>
 
 <%- include('../partials/footer') %>
