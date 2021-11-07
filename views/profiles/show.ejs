@@ -11,7 +11,26 @@
       >
     </div>
   <% } %>
-  <h1>It's All Da Hammy's <%= isSelf ? "you" : profile.name %>own!</h1>
+  <!-- <h1>All Your Hammy's <%= isSelf ? "you" : profile.name %> That You Own!</h1> -->
+  <h1>All Your Hammy's That You Own!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add a Hammy!</h2>
+    <form action="/profiles/<%= profile._id %>/cats" method="POST">
+      <label>
+        Name: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Species: 
+        <input type="text" name="species" autocomplete="off">
+      </label>
+      <label>
+        Comment: 
+        <input type="text" name="comment" autocomplete="off">
+        <button type="submit">Adopt Hammy 🥳</button>
+    </form>
+  <% } %>
+      </label>
 </main>
 
 <%- include('../partials/footer') %>
