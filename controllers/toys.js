@@ -2,7 +2,7 @@ import { Toy } from '../models/toy.js'
 
 function index(req, res) {
   Toy.find({})
-  .then(breeds => {
+  .then(toys => {
     res.render('toys/index', {
       title:"Hampsters!",
       breeds,
@@ -18,7 +18,7 @@ function create(req,res) {
   req.body.owner = req.user.profile._id
   req.body.aggressive = !!req.body.aggressive
   Toy.create(req.body)
-  .then(breed => {
+  .then(toy => {
     res.redirect('/toys')
   })
   .catch(err => {
@@ -30,7 +30,7 @@ function create(req,res) {
 function show(req, res){
   Toy.findById(req.params.id)
   .populate("owner")
-  .then(breed => {
+  .then(toy => {
     res.render('toys/show', {
       breed,
       title: "toy show"
@@ -44,7 +44,7 @@ function show(req, res){
 
 function switchAggressive(req, res) {
   Toy.findById(req.params.id)
-  .then(breed => {
+  .then(toy => {
     breed.aggressive = !breed.aggressive
     breed.save()
     .then(()=> {
@@ -59,7 +59,7 @@ function switchAggressive(req, res) {
 
 function edit(req, res) {
   Toy.findById(req.params.id)
-  .then(breed => {
+  .then(toy => {
     res.render('toys/edit', {
       breed,
       title: "edit"
@@ -73,7 +73,7 @@ function edit(req, res) {
 
 function update(req, res) {
   Toy.findById(req.params.id)
-  .then(breed => {
+  .then(toy => {
     if(breed.owner,equals(eq.user.profile_id)) {
       req.body.aggressive = !!req.body.agressive
       breed.updateOne(req.body, {new: true})
@@ -92,7 +92,7 @@ function update(req, res) {
 
 function deleteBreed(req, res) {
   Toy.findById(req.params.id)
-  .then(breed => {
+  .then(toy => {
     if(breed.owner.equals(req.user.profile._id)){
       breed.delete()
       .then(() => {
