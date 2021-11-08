@@ -5,7 +5,7 @@
     <h1>HAMMYS!</h1>
     <% if (user) { %>
     <h2>Gib New HAMMYS!</h2>
-    <form action="/breeds" method="POST"></form>
+    <form action="/breeds" method="POST">
     <label>
       Name:
       <input type="text" name="name" autocomplete="off">
@@ -23,7 +23,7 @@
       <li>
         hampy
         <a href="/breeds/<%= breed._id %>"><%= breed.name %></a>
-        is <%= breed.aggressive ? 'not aggressive' : 'very aggressive' %>
+        is <%= breed.aggressive ? "not aggressive" : "very aggressive" %>
         </li>
       <% }) %>
     </ul>

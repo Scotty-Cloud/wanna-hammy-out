@@ -12,14 +12,14 @@
     >
     <button class="btn" type="submit">
       This Hammy is <%= breed.aggressive ? 'not aggressive 🥳' : 'very aggressive 😖' %> 
-      </button>
+        </button>
       </form>
       <% } %>
       <% if(breed.owner.equals(user?.profile._id)) { %>
         <form action="/breeds/<%= breed._id %>/edit" method="GET">
         <button class="btn" type="submit">Update This Hammy 🐹</button>
         </form>
-        <form action="/breeds/<%= taco._id %>?_method=DELETE" method="POST">
+        <form action="/breeds/<%= breed._id %>?_method=DELETE" method="POST">
           <button class="btn" type="submit">Bury This Hammy 🥺</button>  
         </form>
         <% } %>
