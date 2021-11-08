@@ -5,7 +5,7 @@ function index(req, res) {
   .then(toys => {
     res.render('toys/index', {
       title:"Hampsters!",
-      breeds,
+      toys,
     })
   })
   .catch(err => {
@@ -32,7 +32,7 @@ function show(req, res){
   .populate("owner")
   .then(toy => {
     res.render('toys/show', {
-      breed,
+      toy,
       title: "toy show"
     })
   })
@@ -45,8 +45,8 @@ function show(req, res){
 function switchAggressive(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    breed.aggressive = !breed.aggressive
-    breed.save()
+    toy.aggressive = !toy.aggressive
+    toy.save()
     .then(()=> {
       res.redirect(`/toys/${breed._id}`)
     })
@@ -61,7 +61,7 @@ function edit(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
     res.render('toys/edit', {
-      breed,
+      toy,
       title: "edit"
     })
   })
@@ -74,11 +74,11 @@ function edit(req, res) {
 function update(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    if(breed.owner,equals(eq.user.profile_id)) {
+    if(toy.owner,equals(eq.user.profile_id)) {
       req.body.aggressive = !!req.body.agressive
-      breed.updateOne(req.body, {new: true})
+      toy.updateOne(req.body, {new: true})
       .then(()=> {
-        res.redirect(`/toys/${breed._id}`)
+        res.redirect(`/toys/${toy._id}`)
       })
     } else {
       throw new Error ("Do You Know Anything About Hammy?")
@@ -90,11 +90,11 @@ function update(req, res) {
   })
 }
 
-function deleteBreed(req, res) {
+function deleteToy(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    if(breed.owner.equals(req.user.profile._id)){
-      breed.delete()
+    if(toy.owner.equals(req.user.profile._id)){
+      toy.delete()
       .then(() => {
         res.redirect('/toys')
       })
@@ -117,5 +117,5 @@ export {
   switchAggressive,
   edit,
   update,
-  deleteBreed as delete
+  deleteToy as delete
 }
