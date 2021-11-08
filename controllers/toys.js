@@ -1,4 +1,4 @@
-import { Breed } from '../models/breed.js'
+import { Breed } from '../models/toy.js'
 
 function index(req, res) {
   Breed.find({})
