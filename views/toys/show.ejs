@@ -2,19 +2,20 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>hammy toy <%= toy.name %></h1>
-  <h2>This toy is <%= toy.fun ? 'SUPER FUN 😄' : 'SUPER LAME 😔' %></h2>
-  <% if (user) { %>
+  <p>In The Hamster Cage of <%= toy.owner.name %></p>
+  <h1><%= toy.name %> toy </h1>
+  <h2>This toy is <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> </h2>
+  <% if (user) {%>
     <form
     action="/toys/<%= toy._id %>/flip-fun?_method=PATCH"
     method="POST"
     >
     <button class="btn" type="submit">
-      This Toy is <%= toy.fun ? 'SUPER FUN 😄' : 'SUPER LAME 😔' %> 
+      Make This Toy  <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> 
         </button>
       </form>
       <% } %>
-      <% if(toy.owner.equals(user?.profile._id)) { %>
+      <% if (toy.owner.equals(user?.profile._id)) { %>
         <form action="/toys/<%= toy._id %>/edit" method="GET">
         <button class="btn" type="submit">Update This Toy 🧸</button>
         </form>

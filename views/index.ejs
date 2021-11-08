@@ -2,20 +2,20 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome to the fat hammy abode! <%= user ? user.profile.name : "" %></h1>
-  <div>
-    <img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
-  </div>
+  <h1>Welcome to the Hammy Abode, <%= user ? user.profile.name : "Hammy Lover" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
         src="<%= user.profile.avatar %>" 
         alt="<%= user.profile.name %> avatar"
-      >
-      
+      >      
     </div>
     <img src="https://c.tenor.com/GAMYf3psisEAAAAd/hamster-spinning.gif">
   <% } %>
 </main>
 
 <%- include('./partials/footer') %>
+
+<!-- <div>
+  <img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
+</div> -->
