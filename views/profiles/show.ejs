@@ -14,7 +14,7 @@
   <h1>All Your Hammy's That You Own!</h1>
   <% if (isSelf)  {%> 
     <h2>Add a Hammy!</h2>
-    <form action="/profiles/<%= profile._id %>/hamsters" method="POST">
+    <form action="/profiles/hamsters" method="POST">
       <label>
         Name: 
         <input type="text" name="name" autocomplete="off">
@@ -34,10 +34,10 @@
     <h2>
       <%= isSelf ? "You have" : `${profile.name} has`%> Hamsters! Take a Look!
     </h2>
-    <% profile.hamsters.forEach(cat => { %>
+    <% profile.hamsters.forEach(hamster => { %>
       <h3>
         <%= getRandomHamster() %>
-        <%= hamster.name %> is a <%= hamster.species %> <%= hamster %>
+       <p> <%= hamster.name %> is a <%= hamster.species %></p>
         <% if (isSelf) { %>
           <form action="/profiles/hamsters/<%= hamster._id %>?_method=DELETE"
             method="POST"

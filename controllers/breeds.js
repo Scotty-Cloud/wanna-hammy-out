@@ -15,7 +15,7 @@ function index(req, res) {
 }
 
 function create(req,res) {
-  req.body.owner = req.user.profile_id
+  req.body.owner = req.user.profile._id
   req.body.aggressive = !!req.body.aggressive
   Breed.create(req.body)
   .then(breed => {

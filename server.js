@@ -64,7 +64,7 @@ app.use(passUserToView)
 // router middleware
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
-app.use("breeds", breedsRouter)
+app.use("/breeds", breedsRouter)
 app.use('/profiles', profilesRouter)
 
 // catch 404 and forward to error handler

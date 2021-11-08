@@ -35,6 +35,7 @@ function show(req, res){
 }
 
 function adoptHamster(req, res){
+  console.log('HERE')
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.hamsters.push(req.body)
