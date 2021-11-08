@@ -1,7 +1,7 @@
-import { Breed } from '../models/toy.js'
+import { Toy } from '../models/toy.js'
 
 function index(req, res) {
-  Breed.find({})
+  Toy.find({})
   .then(breeds => {
     res.render('toys/index', {
       title:"Hampsters!",
@@ -17,7 +17,7 @@ function index(req, res) {
 function create(req,res) {
   req.body.owner = req.user.profile._id
   req.body.aggressive = !!req.body.aggressive
-  Breed.create(req.body)
+  Toy.create(req.body)
   .then(breed => {
     res.redirect('/toys')
   })
@@ -28,7 +28,7 @@ function create(req,res) {
 }
 
 function show(req, res){
-  Breed.findById(req.params.id)
+  Toy.findById(req.params.id)
   .populate("owner")
   .then(breed => {
     res.render('toys/show', {
@@ -43,7 +43,7 @@ function show(req, res){
 }
 
 function switchAggressive(req, res) {
-  Breed.findById(req.params.id)
+  Toy.findById(req.params.id)
   .then(breed => {
     breed.aggressive = !breed.aggressive
     breed.save()
@@ -58,7 +58,7 @@ function switchAggressive(req, res) {
 }
 
 function edit(req, res) {
-  Breed.findById(req.params.id)
+  Toy.findById(req.params.id)
   .then(breed => {
     res.render('toys/edit', {
       breed,
@@ -72,7 +72,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Breed.findById(req.params.id)
+  Toy.findById(req.params.id)
   .then(breed => {
     if(breed.owner,equals(eq.user.profile_id)) {
       req.body.aggressive = !!req.body.agressive
@@ -91,7 +91,7 @@ function update(req, res) {
 }
 
 function deleteBreed(req, res) {
-  Taco.findById(req.params.id)
+  Toy.findById(req.params.id)
   .then(breed => {
     if(breed.owner.equals(req.user.profile._id)){
       breed.delete()
