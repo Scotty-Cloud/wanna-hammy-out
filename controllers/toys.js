@@ -15,6 +15,8 @@ function index(req, res) {
   })
 }
 
+
+
 function create(req,res) {
   req.body.owner = req.user.profile._id
   req.body.fun = !!req.body.fun
@@ -62,8 +64,8 @@ function edit(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
     res.render('toys/edit', {
-      toy,
-      title: "edit"
+      title: "edit",
+      toy,    
     })
   })
   .catch(err => {
@@ -94,7 +96,7 @@ function update(req, res) {
 function deleteToy(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    if(toy.owner.equals(req.user.profile._id)){
+    if(toy.owner.equals(req.user.profile._id)) {
       toy.delete()
       .then(() => {
         res.redirect('/toys')
