@@ -4,26 +4,26 @@
 <section>
     <h1>HAMMYS!</h1>
     <% if (user) { %>
-    <h2>Gib New HAMMYS!</h2>
-    <form action="/breeds" method="POST">
+    <h2>Give New Toy!</h2>
+    <form action="/toys" method="POST">
     <label>
       Name:
       <input type="text" name="name" autocomplete="off">
     </label>
     <label>
-      Aggressive?
-      <input type="checkbox" name="aggressive"
+      Fun?
+      <input type="checkbox" name="fun"
     </label>
-    <button type="submit">Add Hammy</button>
+    <button type="submit">Add Toy</button>
     </form>
     <% } %>
-    <h2>All Hammys!</h2>
+    <h2>All Toys!</h2>
     <ul>
-     <% breeds.forEach(breed => { %> 
+     <% toys.forEach(toy => { %> 
       <li>
-        hampy
-        <a href="/breeds/<%= breed._id %>"><%= breed.name %></a>
-        is <%= breed.aggressive ? "not aggressive" : "very aggressive" %>
+        Hammy Toys
+        <a href="/toys/<%= toy._id %>"><%= toy.name %></a>
+        is <%= toy.fun ? "SUPER FUN" : "SUPER LAME" %>
         </li>
       <% }) %>
     </ul>
