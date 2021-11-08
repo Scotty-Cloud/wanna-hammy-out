@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <p>Look At This Hamster</p>
+  <h1><%= toy.name %>hammytoy</h1>
+  <h2>This toy is <%= toy.fun ? 'SUPER FUN 😄' : 'SUPER LAME 😔' %></h2>
+  <% if (user) { %>
+    <form
+    action="/toys/<%= toy._id %>/flip-fun?_method=PATCH"
+    method="POST"
+    >
+    <button class="btn" type="submit">
+      This Toy is <%= toy.fun ? 'SUPER FUN 🥳' : 'SUPER LAME 😖' %> 
+        </button>
+      </form>
+      <% } %>
+      <% if(toy.owner.equals(user?.profile._id)) { %>
+        <form action="/toys/<%= toy._id %>/edit" method="GET">
+        <button class="btn" type="submit">Update This Toy 🧸</button>
+        </form>
+        <form action="/toys/<%= toy._id %>?_method=DELETE" method="POST">
+          <button class="btn" type="submit">Throw Away Toy 🥺</button>  
+        </form>
+        <% } %>
+</section>
+
+<%- include('../partials/footer') %>
