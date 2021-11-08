@@ -4,7 +4,7 @@ function index(req, res) {
   Toy.find({})
   .then(toys => {
     res.render('toys/index', {
-      title:"Hampsters!",
+      title:"Hampster Toys!",
       toys,
     })
   })
@@ -16,7 +16,7 @@ function index(req, res) {
 
 function create(req,res) {
   req.body.owner = req.user.profile._id
-  req.body.aggressive = !!req.body.aggressive
+  req.body.fun = !!req.body.fun
   Toy.create(req.body)
   .then(toy => {
     res.redirect('/toys')
@@ -33,7 +33,7 @@ function show(req, res){
   .then(toy => {
     res.render('toys/show', {
       toy,
-      title: "toy show"
+      title: "Show Toy"
     })
   })
   .catch(err => {
@@ -42,13 +42,13 @@ function show(req, res){
   })
 }
 
-function switchAggressive(req, res) {
+function switchFun(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    toy.aggressive = !toy.aggressive
+    toy.fun = !toy.fun
     toy.save()
     .then(()=> {
-      res.redirect(`/toys/${breed._id}`)
+      res.redirect(`/toys/${toy._id}`)
     })
   })
   .catch(err => {
@@ -74,8 +74,8 @@ function edit(req, res) {
 function update(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    if(toy.owner,equals(eq.user.profile_id)) {
-      req.body.aggressive = !!req.body.agressive
+    if(toy.owner.equals(eq.user.profile_id)) {
+      req.body.fun = !!req.body.fun
       toy.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/toys/${toy._id}`)
@@ -99,7 +99,7 @@ function deleteToy(req, res) {
         res.redirect('/toys')
       })
     } else {
-      throw new ERROR ('CANT BURY SOMEONE ELSES HAMMY')
+      throw new ERROR ('DONT BULLY OTHER PEOPLES HAMMY!')
     }
   })
   .catch(err => {
@@ -114,7 +114,7 @@ export {
   index,
   create,
   show,
-  switchAggressive,
+  switchFun,
   edit,
   update,
   deleteToy as delete
