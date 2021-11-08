@@ -21,6 +21,7 @@ A fun little webpage that allows users to create hamsters, adopt hamsters, and v
 - HTML
 - CSS
 - JavaScript
+- BootStrap
 - Node.js
 - Express
 - Mongoose
