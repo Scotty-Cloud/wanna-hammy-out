@@ -15,7 +15,7 @@ router.get("/:id/edit", isLoggedIn, toysCtrl.edit)
 router.post("/", isLoggedIn, toysCtrl.create)
 
 // localhost:3000/breeds/:id/flip-aggressive - PATCH
-router.patch("/:id/flip-aggressive", isLoggedIn, toysCtrl.switchAggressive)
+router.patch("/:id/flip-aggressive", isLoggedIn, toysCtrl.switchFun)
 
 // localhost:3000/breeds/:id - PUT
 router.put("/:id", isLoggedIn, toysCtrl.update)
