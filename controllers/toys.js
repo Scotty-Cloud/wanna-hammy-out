@@ -3,14 +3,14 @@ import { Breed } from '../models/toy.js'
 function index(req, res) {
   Breed.find({})
   .then(breeds => {
-    res.render('breeds/index', {
+    res.render('toys/index', {
       title:"Hampsters!",
       breeds,
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/breeds")
+    res.redirect("/toys")
   })
 }
 
@@ -19,11 +19,11 @@ function create(req,res) {
   req.body.aggressive = !!req.body.aggressive
   Breed.create(req.body)
   .then(breed => {
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
 }
 
@@ -31,14 +31,14 @@ function show(req, res){
   Breed.findById(req.params.id)
   .populate("owner")
   .then(breed => {
-    res.render('breeds/show', {
+    res.render('toys/show', {
       breed,
-      title: "hammy show"
+      title: "toy show"
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
 }
 
@@ -48,26 +48,26 @@ function switchAggressive(req, res) {
     breed.aggressive = !breed.aggressive
     breed.save()
     .then(()=> {
-      res.redirect(`/breeds/${breed._id}`)
+      res.redirect(`/toys/${breed._id}`)
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
 }
 
 function edit(req, res) {
   Breed.findById(req.params.id)
   .then(breed => {
-    res.render('breeds/edit', {
+    res.render('toys/edit', {
       breed,
       title: "edit"
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
 }
 
@@ -78,7 +78,7 @@ function update(req, res) {
       req.body.aggressive = !!req.body.agressive
       breed.updateOne(req.body, {new: true})
       .then(()=> {
-        res.redirect(`/breeds/${breed._id}`)
+        res.redirect(`/toys/${breed._id}`)
       })
     } else {
       throw new Error ("Do You Know Anything About Hammy?")
@@ -86,7 +86,7 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/breeds`)
+    res.redirect(`/toys`)
   })
 }
 
@@ -96,7 +96,7 @@ function deleteBreed(req, res) {
     if(breed.owner.equals(req.user.profile._id)){
       breed.delete()
       .then(() => {
-        res.redirect('/breeds')
+        res.redirect('/toys')
       })
     } else {
       throw new ERROR ('CANT BURY SOMEONE ELSES HAMMY')
@@ -104,7 +104,7 @@ function deleteBreed(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/breeds')
+    res.redirect('/toys')
   })
   }
 
