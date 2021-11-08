@@ -36,14 +36,14 @@
     </h2>
     <% profile.hamsters.forEach(hamster => { %>
       <h3>
-        <%= getRandomHamster() %>
+        <%= getRandomHamsterToy() %>
        <p> <%= hamster.name %> is a <%= hamster.species %></p>
         <% if (isSelf) { %>
           <form action="/profiles/hamsters/<%= hamster._id %>?_method=DELETE"
             method="POST"
             style="display: inline-block;"
           >
-          <button type="submit">Bury Hammy <%= hamster.name %></button>
+          <button type="submit">Get Toy For <%= hamster.name %></button>
           </form>
           <% } %>
         </h3>
@@ -55,10 +55,10 @@
   <% } %> 
 </main>
 
-<% function getRandomHamster() { %>
-  <% let hamsters = ["fat hammy", "round hammy", "small hammy", "dwarf hammy", "syrian hammy", "chineese hammy", "round hammy", "flying hammy", "sleeping hammy"] %>
+<!--<% function getRandomHamsterToy() { %>
+  <% let hamsters = ["wood block", "pillow", "spoon", "water bottle", "chair","pen","phone","computer"] %>
   <% return hamsters[Math.floor(Math.random() * hamsters.length)] %>
-<% } %>
+<% } %> -->
 
 
 <%- include('../partials/footer') %>
