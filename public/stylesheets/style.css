@@ -26,7 +26,7 @@ body {
 }
 
 nav {
-  background-color: white;
+  background: radial-gradient(circle, rgba(230,157,255,1) 0%, rgba(154,221,241,1) 50%, rgba(104,144,213,1) 100%);
   font-size: 1.6rem;
   display: flex;
   justify-content: space-evenly;

@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-    <h1>HAMMYS!</h1>
+    <h1>HAMMY TOYS!</h1>
     <% if (user) { %>
     <h2>Give New Toy!</h2>
     <form action="/toys" method="POST">
@@ -23,7 +23,7 @@
       <li>
         
         <a href="/toys/<%= toy._id %>"><%= toy.name %></a>
-        are <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %>
+        <p> are <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> </p>
         </li>
       <% }) %>
     </ul>

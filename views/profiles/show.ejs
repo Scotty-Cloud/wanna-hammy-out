@@ -11,7 +11,7 @@
       >
     </div>
   <% } %>
-  <h1>All Your Hammy's That You Own!</h1>
+  <h1>All Hammy's That You Own!</h1>
   <% if (isSelf)  {%> 
     <h2>Add a Hammy!</h2>
     <form action="/profiles/hamsters" method="POST">
@@ -20,42 +20,38 @@
         <input type="text" name="name" autocomplete="off">
       </label>
       <label>
-        Species: 
-        <input type="text" name="species" autocomplete="off">
-      </label>
-      <label>
-        Comment: 
-        <input type="text" name="comment" autocomplete="off">
+        Food: 
+        <input type="text" name="food" autocomplete="off">
       </label>
       <button type="submit">Adopt Hammy 🥳</button>
     </form>
-  <% } %>
-  <% if (profile.hamsters.length) { %>
-    <h2>
-      <%= isSelf ? "You have" : `${profile.name} has`%> Hamsters! Take a Look!
-    </h2>
-    <% profile.hamsters.forEach(hamster => { %>
-      <h3>
-        <%= getRandomHamsterToy() %>
-       <p> <%= hamster.name %> is a <%= hamster.species %></p>
-        <% if (isSelf) { %>
-          <form action="/profiles/hamsters/<%= hamster._id %>?_method=DELETE"
-            method="POST"
-            style="display: inline-block;"
-          >
-          <button type="submit">Get Toy</button>
-          </form>
-          <% } %>
-        </h3>
-        <% }) %>
-  <% } else { %>
-    <h2>
-      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any Hamsters. 
-    </h2>
-  <% } %> 
+    <% } %>
+    <% if (profile.hamsters.length) { %>
+      <h2>
+        <%= isSelf ? "You have" : `${profile.name} has`%> Hamsters! Take a Look!
+      </h2>
+      <% profile.hamsters.forEach(hamster => { %>
+        <h3>
+          
+         <%= hamster.name %> likes to eat <%= hamster.food %>
+          <% if (isSelf) { %>
+            <form action="/profiles/hamsters/<%= hamster._id %>?_method=DELETE"
+              method="POST"
+              style="display: inline-block;"
+            >
+            <!-- <button type="submit">Get Toy</button> -->
+            </form>
+            <% } %>
+          </h3>
+          <% }) %>
+    <% } else { %>
+      <h2>
+        <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any Hamsters. 
+      </h2>
+    <% } %> 
 </main>
 
-<% function getRandomHamsterToy() { %>
+<% function getRandomHamster() { %>
   <% let hamsters = ["wood block", "pillow", "spoon", "water bottle", "chair","pen","phone","computer"] %>
   <% return hamsters[Math.floor(Math.random() * hamsters.length)] %>
 <% } %>

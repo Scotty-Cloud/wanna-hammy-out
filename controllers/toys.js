@@ -3,8 +3,9 @@ import { Toy } from '../models/toy.js'
 function index(req, res) {
   Toy.find({})
   .then(toys => {
+    console.log(toys)
     res.render('toys/index', {
-      title:"Hampster Toys!",
+      title:"Hamster Toys!",
       toys,
     })
   })

@@ -4,8 +4,7 @@ const Schema = mongoose.Schema
 
 const hamsterSchema = new Schema ({
   name: String,
-  species: String,
-  comment: String,
+  food: String,
 }, {
   timestamps: true,
 })

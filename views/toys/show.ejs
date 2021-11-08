@@ -2,8 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <p>Look At This Hamster</p>
-  <h1><%= toy.name %>hammytoy</h1>
+  <h1>hammy toy <%= toy.name %></h1>
   <h2>This toy is <%= toy.fun ? 'SUPER FUN 😄' : 'SUPER LAME 😔' %></h2>
   <% if (user) { %>
     <form

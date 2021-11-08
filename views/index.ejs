@@ -3,7 +3,9 @@
 
 <main>
   <h1>Welcome to the fat hammy abode! <%= user ? user.profile.name : "" %></h1>
-  <img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
+  <div>
+    <img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
+  </div>
   <% if (user?.profile.avatar) { %>
     <div>
       <img 
