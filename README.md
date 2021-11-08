@@ -31,7 +31,7 @@ A fun little webpage that allows users to create hamsters, adopt hamsters, and v
 =============
 
 - [ ] Create a page that shows users how to care for their hamsters
-- [ ] implement functionality of being able to comment on other peoples chose of hamsters
-- [ ] Add a rating scale where users can set a rating of how badly they want a specific hamster
+- [ ] Implement ability to comment on other peoples chose of hamsters
+- [ ] Add a rating scale to determine how bad a person may want hamsters
 
 
