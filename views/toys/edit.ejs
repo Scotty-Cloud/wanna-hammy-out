@@ -2,26 +2,26 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Update This Hammy!</h1>
-  <form action="/breeds/<%= breed._id %>?_method=PUT" method="POST">
+  <h1>Update This Toy!</h1>
+  <form action="/toys/<%= toy._id %>?_method=PUT" method="POST">
   <label>
     Name:
     <input
     type="text"
     name="name"
-    value="<% breed.name %>"
+    value="<% toy.name %>"
     autocomplete="off"
     >
   </label>
   <label>
-    aggressive?
+    Fun?
     <input
     type="checkbox"
-    name="aggressive"
-    <%= breed.aggresive ? "checked" : "" %>
+    name="fun"
+    <%= toy.fun ? "checked" : "" %>
     >
   </label>
-  <button type="submit">Update This Hammy</button>
+  <button type="submit">Update This Toy</button>
   </form>
 </section>
 
