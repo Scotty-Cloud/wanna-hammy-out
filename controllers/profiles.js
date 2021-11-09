@@ -35,7 +35,6 @@ function show(req, res){
 }
 
 function adoptHamster(req, res){
-  console.log('HERE')
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.hamsters.push(req.body)
@@ -51,9 +50,10 @@ function adoptHamster(req, res){
 }
 
 function deleteHamster(req, res) {
+  console.log('am i running')
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    profile.hamsters.remove({_id: req.params._id})
+    profile.hamsters.remove({_id: req.params.id})
     profile.save()
     .then(() => {
       res.redirect(`/profiles/${req.user.profile._id}`)
