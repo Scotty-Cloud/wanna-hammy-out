@@ -77,8 +77,10 @@ function edit(req, res) {
 function update(req, res) {
   Toy.findById(req.params.id)
   .then(toy => {
-    if(toy.owner.equals(eq.user.profile_id)) {
+    if(toy.owner.equals(req.user.profile_id)) {
+      // console.log('before: ' + req.body.fun);
       req.body.fun = !!req.body.fun
+      // console.log('after: ' + req.body.fun);
       toy.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/toys/${toy._id}`)
