@@ -39,7 +39,7 @@
               method="POST"
               style="display: inline-block;"
             >
-            <!-- <button type="submit">Get Toy</button> -->
+            <button type="submit"> bury <%= hamster.name %></button>
             </form>
             <% } %>
           </h3>
@@ -52,7 +52,8 @@
 </main>
 
 <% function getRandomHamster() { %>
-  <% let hamsters = ["wood block", "pillow", "spoon", "water bottle", "chair","pen","phone","computer"] %>
+  <% let hamsters = ['🥞','🧇','🍞','🥯','🍨','🍦','🍢','🍜','🍣','🍯','🥛',
+                      '🧋','🍪','🍩','🍿','🧁','🍮','🍔','🍕','🥪','🍖','🍗',] %>
   <% return hamsters[Math.floor(Math.random() * hamsters.length)] %>
 <% } %>
 
