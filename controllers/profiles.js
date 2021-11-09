@@ -21,15 +21,15 @@ function show(req, res){
     .then(self => {
       const isSelf = self._id.equals(profile._id)
       res.render("profiles/show", {
-        title: `Hammy of ${profile.name}'s profile`,
         profile,
+        title: `Hammy of ${profile.name}'s profile`,
         self,
         isSelf,
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect("/")
+      res.redirect(`/profiles/${req.user.profile._id}`)
     })
   })
 }
