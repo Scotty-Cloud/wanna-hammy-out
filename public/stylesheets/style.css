@@ -34,6 +34,11 @@ nav {
   align-items: center;
 }
 
+nav > a {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 main {
   display: flex;
   align-items: center;
