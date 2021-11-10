@@ -44,7 +44,6 @@ nav > a {
 }
 
 main {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,3 +59,12 @@ h1 {
   color: white;
 }
 
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Gluten', cursive;
+  font-size: 16px;
+  color:rgb(59, 104, 88);
+}
