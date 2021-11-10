@@ -37,9 +37,12 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: 'Mansalva', cursive;
+  font-size: 16px;
 }
 
 h1 {
   font-size: 3.6rem;
   font-family: 'Mountains of Christmas', cursive;
+  color: white;
 }
