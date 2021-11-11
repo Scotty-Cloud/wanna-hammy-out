@@ -32,6 +32,8 @@ nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 nav > a {
@@ -50,7 +52,7 @@ main {
   flex-direction: column;
   font-family: 'Gluten', cursive;
   font-size: 16px;
-  color:rgb(59, 104, 88);
+  color:rgb(164, 71, 182);
 }
 
 h1 {
@@ -66,5 +68,5 @@ section {
   flex-direction: column;
   font-family: 'Gluten', cursive;
   font-size: 16px;
-  color:rgb(59, 104, 88);
+  color:rgb(164, 71, 182);
 }
