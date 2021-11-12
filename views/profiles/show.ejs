@@ -3,17 +3,11 @@
 
 <main>
   <% if (profile.avatar) { %>
-    <div>
-      <img 
-        class="profile-avatar"
-        src="<%= profile.avatar %>" 
-        alt="<%= profile.name %> avatar"
-      >
-    </div>
+
   <% } %>
   <h1>All Hammy's That You Own!</h1>
   <% if (isSelf)  {%> 
-    <h2>Add a Hammy!</h2>
+    <h2>Adopt a Hammy!</h2>
     <form action="/profiles/hamsters" method="POST">
       <label>
         Name: 
@@ -52,9 +46,9 @@
 </main>
 
 <% function getRandomFood() { %>
-  <% let hamsters = ['🥞','🧇','🍞','🥯','🍨','🍦','🍢','🍜','🍣','🍯','🥛',
+  <% let food = ['🥞','🧇','🍞','🥯','🍨','🍦','🍢','🍜','🍣','🍯','🥛',
                       '🧋','🍪','🍩','🍿','🧁','🍮','🍔','🍕','🥪','🍖','🍗',] %>
-  <% return hamsters[Math.floor(Math.random() * hamsters.length)] %>
+  <% return food[Math.floor(Math.random() * food.length)] %>
 <% } %>
 
 

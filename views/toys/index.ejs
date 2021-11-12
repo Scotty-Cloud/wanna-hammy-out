@@ -21,9 +21,7 @@
     <ul>
      <% toys.forEach(toy => { %> 
       <li>
-        Toy
-        <a href="/toys/<%= toy._id %>"><%= toy.name %></a>
-        <p> are <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> </p>
+        <a href="/toys/<%= toy._id %>"><%= toy.name %> are <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> </a>        
         </li>
       <% }) %>
     </ul>

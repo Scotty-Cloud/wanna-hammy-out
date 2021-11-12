@@ -37,10 +37,11 @@ nav {
 }
 
 nav > a {
+  grid-area: nav;
+  font-size: 1.6rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  text-align: center;
   padding-left: 9px;
   padding-right: 9px;
 }
@@ -70,3 +71,22 @@ section {
   font-size: 16px;
   color:rgb(164, 71, 182);
 }
+
+button {
+  display: inline-block;
+  background-color: #5f9d8e;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover {
+  background-color: #5f859d;
+}
+
