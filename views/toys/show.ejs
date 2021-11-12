@@ -4,14 +4,14 @@
 <section>
   <p>In The Hamster Cage of <%= toy.owner.name %></p>
   <h1><%= toy.name %> toy </h1>
-  <h2>This toy is <%= toy.fun ? "SUPER FUN 😄" : "SUPER LAME 😔" %> </h2>
+  <h2>This toy is <%= toy.fun ? "Super Fun 😄" : "Super Lame 😔" %> </h2>
   <% if (user) {%>
     <form
     action="/toys/<%= toy._id %>/flip-fun?_method=PATCH"
     method="POST"
     >
     <button class="btn" type="submit">
-      Make This Toy  <%= toy.fun ? "SUPER LAME 😔" : " SUPER FUN 😄" %> 
+      Make This Toy  <%= toy.fun ? "Super Lame 😔" : " Super Fun 😄" %> 
         </button>
       </form>
       <% } %>

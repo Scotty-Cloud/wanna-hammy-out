@@ -58,7 +58,7 @@ main {
   flex-direction: column;
   font-family: 'Gluten', cursive;
   font-size: 16px;
-  color:rgb(164, 71, 182);
+  color:rgb(147, 2, 17);
   cursor: url(../img/hammyBtn.png), auto;
 }
 
@@ -68,6 +68,10 @@ h1 {
   color: white;
 }
 
+h2 {
+  color: #0790b6;
+}
+
 section {
   display: flex;
   align-items: center;
@@ -75,13 +79,13 @@ section {
   flex-direction: column;
   font-family: 'Gluten', cursive;
   font-size: 16px;
-  color:rgb(164, 71, 182);
+  color:rgb(147, 2, 17);
   cursor: url(../img/hammyBtn.png), auto;
 }
 
 button {
   display: inline-block;
-  background-color: #5f9d8e;
+  background-color: #a8e1d3;
   border-radius: 10px;
   border: 4px double #cccccc;
   color: #eeeeee;
@@ -94,6 +98,6 @@ button {
   margin: 5px;
 }
 button:hover {
-  background-color: #5f859d;
+  background-color: #9ec0d4;
 }
 
