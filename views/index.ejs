@@ -3,19 +3,34 @@
 
 <main>
   <h1>Welcome to the Hammy Abode, <%= user ? user.profile.name : "Hammy Lover" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img 
-        src="<%= user.profile.avatar %>" 
-        alt="<%= user.profile.name %> avatar"
-      >      
+  <div>
+    <img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
+    <img src="https://media2.giphy.com/media/UX4JdEzVMam707PkAW/200w.gif">
+    <img src="https://i.pinimg.com/originals/4f/32/58/4f3258f0fa8edc7045ba42720834235e.gif">
     </div>
+  <% if (user?.profile.avatar) { %>
+    <h2>Before you begin please check out these links to help you!</h2>
+    <p>
+      <a href="https://www.petmd.com/exotic/care/evr_ex_hm_how-to-care-for-your-hamster">Hamster Care 101</a>
+    </p>
     <img src="https://c.tenor.com/GAMYf3psisEAAAAd/hamster-spinning.gif">
+    <p>
+      <a href="https://www.kaytee.com/learn-care/ask-the-small-animal-experts/9-hamster-care-tips-for-beginners">Tips & Tricks to Hammy Care</a>
+    </p>
+    <img src="https://i.pinimg.com/originals/65/d3/a8/65d3a8061bb4f300357aaac1f78e6c30.gif">
+    <p>
+      <a href="https://www.chewy.com/b/toys-10962">Buy Hammy Toys</a>
+    </p>
+    <img src="https://media0.giphy.com/media/E0KmHELTpq9pK/giphy.gif?cid=790b7611d58bc717b13c01e3c157a50fae758b7ca34fb915&rid=giphy.gif&ct=g">
+    <p>
+      <a href="https://petkeen.com/diy-hamster-toys/">DIY Hammy Toys</a>
+    </p>
+    <img src="https://media1.giphy.com/media/eS1lKEnFu37eo/200.webp?cid=ecf05e47um00boqpi8ony2jnxsjc642xo0dhqgd8unb1hd03&rid=200.webp&ct=g">
+    <p>
+      <a href="https://www.thesprucepets.com/popular-hamster-breeds-5101161">Popular Hammy Breeds</a>      
+    </p>
+    <img src="https://c.tenor.com/21hcMXI86ekAAAAC/hamster-hamster-wheel.gif">
   <% } %>
 </main>
 
 <%- include('./partials/footer') %>
-
-<!-- <div>
-<img src="https://media3.giphy.com/media/WQ6ZZhPKa1iQ8/giphy.gif?cid=790b7611eda871d05cfd73c10df85386c601e60e80a4a22b&rid=giphy.gif&ct=g">
-</div> -->
