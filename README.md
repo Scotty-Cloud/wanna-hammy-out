@@ -1,19 +1,27 @@
 🐹 Wanna Hammy Out 🐹 ?
 =======================
 
-A fun little webpage that allows users to create hamsters, adopt hamsters, and view other users hamster they own !
+A fun little webpage that allows users to create toys, adopt hamsters, and learn about hamsters for future reference !
 
 🚩 Getting Started 🚩
 ===================
 
-🏡 [Click Here To Adopt](<deploymentlink>) 🏡
+🏡 [Click Here To Adopt](https://wanna-hammy-out.herokuapp.com) 🏡
 
 🚧 [Trello Board](https://trello.com/b/ZCpW8Gju/u2p-trello-board) 🚧 
 
--------------------------------------------
+🛠 Wireframe & ERD 🛠
+----------------------
 
-<img src="https://pbs.twimg.com/profile_images/1382278261334368257/CfMAqxSD.jpg">
-<img src="https://pbs.twimg.com/media/D22T2wsWwAE3oEz.jpg">
+<img src="https://i.imgur.com/2yFNbZO.png">
+<img src="https://i.imgur.com/Y1gNA2R.png">
+
+📸 Web App Images 📸
+=====================
+
+<img src="https://i.imgur.com/MNeDdUV.png">
+<img src="https://i.imgur.com/Kx7v5mX.png">
+<img src="https://i.imgur.com/Q31mxmC.png">
 
 ⚙️ Technologies Used ⚙️
 ======================
@@ -34,4 +42,6 @@ A fun little webpage that allows users to create hamsters, adopt hamsters, and v
 - [ ] Implement ability to comment on other peoples chose of hamsters
 - [ ] Add a rating scale to determine how bad a person may want hamsters
 
-
+📌 Resources 📌
+===============
+[RESTFUL Routing Resource](https://ncoughlin.com/posts/restful-routing/)
