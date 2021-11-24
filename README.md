@@ -28,12 +28,8 @@ A fun little webpage that allows users to create toys, adopt hamsters, and learn
 - Express
 - Mongoose
 - MongoDB
+- GoogleFonts
 
-🛠 Wireframe & ERD 🛠
-----------------------
-
-<img src="https://i.imgur.com/2yFNbZO.png">
-<img src="https://i.imgur.com/Y1gNA2R.png">
 
 🧊 Ice Box 🧊
 =============
