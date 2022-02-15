@@ -1,7 +1,10 @@
 html {
   box-sizing: border-box;
   cursor: url(../img/hammyBtn.png), auto;
-  
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
 }
 
 /* The Universal Selector */
@@ -26,6 +29,10 @@ body {
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   cursor: url(../img/hammyBtn.png), auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
 }
 
 nav {
